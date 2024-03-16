@@ -3,9 +3,8 @@ import readlineSync from 'readline-sync';
 export default () => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
-  console.log(
-    `Hello, ${name}!\nAnswer "yes" if the number is even, otherwise answer "no".`
-  );
+  console.log(`Hello, ${name}!\n
+    Answer "yes" if the number is even, otherwise answer "no".`);
 
   const successAttempts = 3;
 
@@ -20,9 +19,8 @@ export default () => {
         console.log(`Congratulations, ${name}!`);
       }
     } else {
-      console.log(
-        `"${answer}" is wrong answer ;(. Correct answer was "${isEven}"\nLet's try again, ${name}!`
-      );
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${isEven}"\n
+      Let's try again, ${name}!`);
       break;
     }
   }
