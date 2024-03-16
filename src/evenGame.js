@@ -8,25 +8,22 @@ export default () => {
   );
 
   const successAttempts = 3;
-  let i = 0;
-  let answer = '';
-  let isEven = '';
 
-  for (i; i < 3; i += 1) {
-    const number = Math.floor(Math.random() * 100);
-    isEven = number % 2 === 0 ? 'yes' : 'no';
+  for (let i = 1; i <= 3; i += 1) {
+    const number = Math.floor(Math.random() * 99) + 1; // Create number except 0
+    const isEven = number % 2 === 0 ? 'yes' : 'no';
     console.log(`Qwestion: ${number}`);
-    answer = readlineSync.question('Your answer: ');
+    const answer = readlineSync.question('Your answer: ');
     if (isEven === answer) {
-      console.log('Correct!');
+      console.log(`Correct! ${i}`);
+      if (i === successAttempts) {
+        console.log(`Congratulations, ${name}!`);
+      }
     } else {
+      console.log(
+        `"${answer}" is wrong answer ;(. Correct answer was "${isEven}"\nLet's try again, ${name}!`
+      );
       break;
     }
   }
-
-  i === successAttempts
-    ? console.log(`Congratulations, ${name}!`)
-    : console.log(
-        `"${answer}" is wrong answer ;(. Correct answer was "${isEven}"\nLet's try again, ${name}!`
-      );
 };
