@@ -1,6 +1,6 @@
 import getRandomNumber from '../getRandomNumber.js';
 
-const gcd = () => {
+export default () => {
   const number1 = getRandomNumber() + 1; // исключаем 0
   const number2 = getRandomNumber() + 1;
 
@@ -15,7 +15,5 @@ const gcd = () => {
   }
   return result;
 };
-
-export default gcd;
 
 // TODO rename gcd
