@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
-import evenGame from '../src/evenGame.js';
+import isEven from '../src/games/evenGame.js';
+import gameLogic from '../src/gameLogic.js';
 
-evenGame();
+const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+gameLogic(isEven, rules);

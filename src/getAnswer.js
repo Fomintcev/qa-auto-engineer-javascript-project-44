@@ -1,3 +1,10 @@
 import readlineSync from 'readline-sync';
 
-export default () => readlineSync.question('Your answer: ');
+const getAnswer = () => {
+  let userInput = readlineSync.question('Your answer: ');
+  if (!Number.isNaN(Number(userInput))) {
+    userInput = Number(userInput);
+  }
+  return userInput;
+};
+export default getAnswer;
