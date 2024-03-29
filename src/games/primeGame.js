@@ -12,7 +12,6 @@ const primeGame = () => {
     }
     value -= 1;
   }
-  console.log(counter);
   return counter === 1 ? 'yes' : 'no';
 };
 
