@@ -26,7 +26,7 @@ const progressionGame = () => {
       }
     }
   }
-  console.log(printedString);
+  console.log(`Question: ${printedString}`);
   return hiddenValue;
 };
 
