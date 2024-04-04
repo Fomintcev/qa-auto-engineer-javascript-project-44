@@ -3,24 +3,18 @@ import getAnswer from './getAnswer.js';
 import isEqual from './isEqual.js';
 
 const gameLogic = (resultFromGame, rules) => {
-  const rounds = 3;
+  const TOTAL_ROUNDS = 3;
   const name = getPlayerName();
   console.log(rules);
-  let winRounds = 0;
-  for (let i = 1; i <= rounds; i += 1) {
+  for (let i = 1; i <= TOTAL_ROUNDS; i += 1) {
     const roundResult = resultFromGame();
     const userAnswer = getAnswer();
 
-    if (isEqual(roundResult, userAnswer)) {
-      winRounds += 1;
-      if (winRounds === rounds) {
-        console.log(`Congratulations, ${name}!`);
-      }
-    } else {
+    if (isEqual(roundResult, userAnswer) !== true) {
       console.log(`Let's try again, ${name}!`);
-      break;
+      return;
     }
   }
+  console.log(`Congratulations, ${name}!`);
 };
-
 export default gameLogic;
