@@ -26,8 +26,11 @@ const progressionGame = () => {
       }
     }
   }
-  console.log(`Question: ${printedString}`);
-  return hiddenValue;
+  const question = `Question: ${printedString}`;
+  return {
+    question,
+    result: hiddenValue,
+  };
 };
 
 export default progressionGame;

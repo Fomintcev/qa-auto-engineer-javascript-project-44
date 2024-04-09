@@ -4,7 +4,7 @@ export default () => {
   const number1 = getRandomNumber() + 1; // исключаем 0
   const number2 = getRandomNumber() + 1;
 
-  console.log(`Question: ${number1} ${number2}`);
+  const question = `Question: ${number1} ${number2}`;
 
   let result = 1;
   const lowerNumber = number1 <= number2 ? number1 : number2;
@@ -13,7 +13,10 @@ export default () => {
       result = i;
     }
   }
-  return result;
+  return {
+    question,
+    result,
+  };
 };
 
 // TODO rename gcd

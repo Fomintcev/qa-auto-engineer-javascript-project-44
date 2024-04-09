@@ -2,7 +2,7 @@ import getRandomNumber from '../getRandomNumber.js';
 
 const primeGame = () => {
   const randomNumber = getRandomNumber() + 2;
-  console.log(`Question: ${randomNumber}`);
+  const question = `Question: ${randomNumber}`;
   let value = randomNumber;
   let counter = 0;
 
@@ -12,7 +12,11 @@ const primeGame = () => {
     }
     value -= 1;
   }
-  return counter === 1 ? 'yes' : 'no';
+  const result = counter === 1 ? 'yes' : 'no';
+  return {
+    question,
+    result,
+  };
 };
 
 export default primeGame;

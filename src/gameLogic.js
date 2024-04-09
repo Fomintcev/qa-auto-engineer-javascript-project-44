@@ -7,10 +7,11 @@ const gameLogic = (resultFromGame, rules) => {
   const name = getPlayerName();
   console.log(rules);
   for (let i = 1; i <= TOTAL_ROUNDS; i += 1) {
-    const roundResult = resultFromGame();
+    const { question, result } = resultFromGame();
+    console.log(question);
     const userAnswer = getAnswer();
 
-    if (isEqual(roundResult, userAnswer) !== true) {
+    if (isEqual(result, userAnswer) !== true) {
       console.log(`Let's try again, ${name}!`);
       return;
     }
