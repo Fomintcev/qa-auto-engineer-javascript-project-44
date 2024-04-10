@@ -2,14 +2,14 @@ import getRandomNumber from '../getRandomNumber.js';
 
 const progressionGame = () => {
   const rules = 'What number is missing in the progression?';
-  const stringLenght = 10;
+  const progressionLenght = 10;
   let currentValue = getRandomNumber();
   const step = getRandomNumber() + 1;
-  const hiddenValueOrder = getRandomNumber(stringLenght);
+  const hiddenValueOrder = getRandomNumber(progressionLenght);
   let hiddenValue = 0;
   let printedString = '';
 
-  for (let i = 0; i < stringLenght; i += 1) {
+  for (let i = 0; i < progressionLenght; i += 1) {
     if (i === 0) {
       if (hiddenValueOrder === 0) {
         printedString += '..';
