@@ -1,6 +1,7 @@
 import randomNum from '../getRandomNumber.js';
 
 const getRandomOperation = () => {
+  const rules = 'What is the result of the expression?';
   const operand1 = randomNum();
   const operand2 = randomNum();
   let result = 0;
@@ -26,6 +27,7 @@ const getRandomOperation = () => {
     // do nothing
   }
   return {
+    rules,
     question,
     result,
   };

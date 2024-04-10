@@ -1,6 +1,7 @@
 import getRandomNumber from '../getRandomNumber.js';
 
 const progressionGame = () => {
+  const rules = 'What number is missing in the progression?';
   const stringLenght = 10;
   let currentValue = getRandomNumber();
   const step = getRandomNumber() + 1;
@@ -28,6 +29,7 @@ const progressionGame = () => {
   }
   const question = `Question: ${printedString}`;
   return {
+    rules,
     question,
     result: hiddenValue,
   };
