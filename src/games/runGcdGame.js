@@ -2,7 +2,7 @@ import getRandomNumber from '../getRandomNumber.js';
 
 export default () => {
   const rules = 'Find the greatest common divisor of given numbers.';
-  const number1 = getRandomNumber() + 1; // исключаем 0
+  const number1 = getRandomNumber() + 1;
   const number2 = getRandomNumber() + 1;
 
   let result = 1;
@@ -22,5 +22,3 @@ export default () => {
     result,
   };
 };
-
-// TODO rename gcd
