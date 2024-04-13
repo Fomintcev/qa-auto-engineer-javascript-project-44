@@ -5,15 +5,17 @@ const primeGame = () => {
   const randomNumber = getRandomNumber() + 2;
   const question = `Question: ${randomNumber}`;
   let value = randomNumber;
-  let counter = 0;
-
-  for (let i = randomNumber; i > 1; i -= 1) {
-    if (randomNumber % value === 0) {
-      counter += 1;
+  let divider = 0;
+  const isPrime = () => {
+    for (let i = randomNumber; i > 1; i -= 1) {
+      if (randomNumber % value === 0) {
+        divider += 1;
+      }
+      value -= 1;
     }
-    value -= 1;
-  }
-  const result = counter === 1 ? 'yes' : 'no';
+    return divider === 1 ? 'yes' : 'no';
+  };
+  const result = isPrime();
   return {
     rules,
     question,
