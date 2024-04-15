@@ -8,30 +8,31 @@
 Инструкция по установке:
 
 - В терминале выполнить команду git clone git@github.com:Fomintcev/qa-auto-engineer-javascript-project-44.git
+- Открыть папку с проектом в терминале
 - Выполнить команду make install
-  Скачать проект, открыть папку с проектом в терминале, запустить команду npm link.
+- Выполнить команду npm link
 
 Even game:
 Игра на проверку четности чисел.
-Для запуска игры необходимо ввести команду brain-even
+Для запуска игры необходимо ввести команду brain-even либо make brain-even
 [![asciicast](https://asciinema.org/a/2YHRxBwgZ9cIKMtamaoxcYpag.svg)](https://asciinema.org/a/2YHRxBwgZ9cIKMtamaoxcYpag)
 
 Calc game:
 Игра на проверку арифметических операций сложения, вычитания и умножения.
-Для запуска игры необходимо ввести команду brain-calc
+Для запуска игры необходимо ввести команду brain-calc либо make brain-calc
 [![asciicast](https://asciinema.org/a/TSSAvVOZzIU5jlzbC8emqoubh.svg)](https://asciinema.org/a/TSSAvVOZzIU5jlzbC8emqoubh)
 
 Greatest common divisor game:
 Игра по нахождению наибольшего делителя двух чисел
-Для запуска игры необходимо ввести команду brain-gcd
+Для запуска игры необходимо ввести команду brain-gcd либо make brain-gcd
 [![asciicast](https://asciinema.org/a/YGSzB5GOPE8CZvjgrBNLnV1Oa.svg)](https://asciinema.org/a/YGSzB5GOPE8CZvjgrBNLnV1Oa)
 
 Progression game:
 Игра по нахождению отсутствующего числа из прогрессии.
-Для запуска игры необходимо ввести команду brain-progression
+Для запуска игры необходимо ввести команду brain-progression либо make brain-progression
 [![asciicast](https://asciinema.org/a/0wmh2BGD8vUByWsC5S8arIzx0.svg)](https://asciinema.org/a/0wmh2BGD8vUByWsC5S8arIzx0)
 
 Prime game:
 Игра на проверку простое ли число.
-Для запуска игры необходимо ввести команду brain-prime
+Для запуска игры необходимо ввести команду brain-prime либо make brain-prime
 [![asciicast](https://asciinema.org/a/QoE3lwwbBRjdelcYKhBSYDGQX.svg)](https://asciinema.org/a/QoE3lwwbBRjdelcYKhBSYDGQX)
