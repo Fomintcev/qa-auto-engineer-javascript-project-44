@@ -13,9 +13,9 @@ const primeGame = () => {
       }
       value -= 1;
     }
-    return divider === 1 ? 'yes' : 'no';
+    return divider === 1;
   };
-  const result = isPrime();
+  const result = isPrime() ? 'yes' : 'no';
   return {
     rules,
     question,

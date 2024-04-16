@@ -5,14 +5,10 @@ export default () => {
   const number = getRandomNumber() + 1;
   const question = `Question: ${number}`;
 
-  const isEven = () => {
-    if (number % 2 === 0) {
-      return 'yes';
-    }
-    return 'no';
-  };
+  const isEven = () => number % 2 === 0;
 
-  const result = isEven();
+  const result = isEven() ? 'yes' : 'no';
+
   return {
     rules,
     question,

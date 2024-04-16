@@ -6,15 +6,28 @@ const progressionGame = () => {
   let currentValue = getRandomNumber();
   const step = getRandomNumber() + 1;
   const hiddenValueOrder = getRandomNumber(progressionLenght);
-  let hiddenValue = 0;
+  let hiddenValue = currentValue;
   let printedString = '';
 
-  const creatingProgression = () => {
+  const findHidenValue = () => {
+    if (hiddenValueOrder === 0) {
+      return hiddenValue;
+    }
+    for (let i = 1; i < progressionLenght; i += 1) {
+      hiddenValue += step;
+      if (hiddenValueOrder === i) {
+        return hiddenValue;
+      }
+    }
+    return hiddenValue;
+  };
+  const result = findHidenValue();
+
+  const creatingQuestion = () => {
     for (let i = 0; i < progressionLenght; i += 1) {
       if (i === 0) {
         if (hiddenValueOrder === 0) {
           printedString += '..';
-          hiddenValue = currentValue;
         } else {
           printedString += String(currentValue);
         }
@@ -22,19 +35,18 @@ const progressionGame = () => {
         currentValue += step;
         if (hiddenValueOrder === i) {
           printedString += ' ..';
-          hiddenValue = currentValue;
         } else {
           printedString += ` ${currentValue}`;
         }
       }
     }
+    return printedString;
   };
-  creatingProgression();
-  const question = `Question: ${printedString}`;
+  const question = `Question: ${creatingQuestion()}`;
   return {
     rules,
     question,
-    result: hiddenValue,
+    result,
   };
 };
 
