@@ -2,13 +2,10 @@ import randomNum from '../getRandomNumber.js';
 
 const getRandomOperation = () => {
   const rules = 'What is the result of the expression?';
-  const operand1 = randomNum();
-  const operand2 = randomNum();
   let result = 0;
   let question = '';
-  const expr = Math.floor(Math.random() * 3);
 
-  const getCaltulationResult = () => {
+  const getCaltulationResult = (operand1, operand2, expr) => {
     switch (expr) {
       case 0:
         result = operand1 + operand2;
@@ -25,8 +22,9 @@ const getRandomOperation = () => {
       default:
       // do nothing
     }
+    return result;
   };
-  const getQuestion = () => {
+  const getQuestion = (operand1, operand2, expr) => {
     switch (expr) {
       case 0:
         question = `Question: ${operand1} + ${operand2}`;
@@ -43,9 +41,15 @@ const getRandomOperation = () => {
       default:
       // do nothing
     }
+    return question;
   };
-  getCaltulationResult();
-  getQuestion();
+
+  const operand1 = randomNum();
+  const operand2 = randomNum();
+  const expr = Math.floor(Math.random() * 3);
+
+  getCaltulationResult(operand1, operand2, expr);
+  getQuestion(operand1, operand2, expr);
   return {
     rules,
     question,

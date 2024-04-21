@@ -2,37 +2,43 @@ import getRandomNumber from '../getRandomNumber.js';
 
 const progressionGame = () => {
   const rules = 'What number is missing in the progression?';
-  const progressionLenght = 10;
-  let currentValue = getRandomNumber();
-  const step = getRandomNumber() + 1;
-  const hiddenValueOrder = getRandomNumber(progressionLenght);
-  let hiddenValue = currentValue;
-  let printedString = '';
 
-  const findHidenValue = () => {
+  const findHidenValue = (
+    firstValue,
+    progressionStep,
+    progressionLenght,
+    hiddenValueOrder,
+  ) => {
+    let hiddenValue = firstValue;
     if (hiddenValueOrder === 0) {
       return hiddenValue;
     }
     for (let i = 1; i < progressionLenght; i += 1) {
-      hiddenValue += step;
+      hiddenValue += progressionStep;
       if (hiddenValueOrder === i) {
         return hiddenValue;
       }
     }
     return hiddenValue;
   };
-  const result = findHidenValue();
 
-  const creatingQuestion = () => {
+  const creatingQuestion = (
+    firstValue,
+    progressionStep,
+    progressionLenght,
+    hiddenValueOrder,
+  ) => {
+    let printedString = '';
+    let currentValue = firstValue;
     for (let i = 0; i < progressionLenght; i += 1) {
       if (i === 0) {
         if (hiddenValueOrder === 0) {
           printedString += '..';
         } else {
-          printedString += String(currentValue);
+          printedString += String(firstValue);
         }
       } else {
-        currentValue += step;
+        currentValue += progressionStep;
         if (hiddenValueOrder === i) {
           printedString += ' ..';
         } else {
@@ -42,7 +48,25 @@ const progressionGame = () => {
     }
     return printedString;
   };
-  const question = `Question: ${creatingQuestion()}`;
+
+  const progressionLenght = 10;
+  const firstValue = getRandomNumber();
+  const progressionStep = getRandomNumber() + 1;
+  const hiddenValueOrder = getRandomNumber(progressionLenght);
+
+  const result = findHidenValue(
+    firstValue,
+    progressionStep,
+    progressionLenght,
+    hiddenValueOrder,
+  );
+  const question = `Question: ${creatingQuestion(
+    firstValue,
+    progressionStep,
+    progressionLenght,
+    hiddenValueOrder,
+  )}`;
+
   return {
     rules,
     question,
