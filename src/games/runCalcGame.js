@@ -1,55 +1,46 @@
 import randomNum from '../getRandomNumber.js';
 
+const getCaltulationResult = (operand1, operand2, expr) => {
+  switch (expr) {
+    case 0:
+      return operand1 + operand2;
+
+    case 1:
+      return operand1 - operand2;
+
+    case 2:
+      return operand1 * operand2;
+
+    default:
+      return 'Operation value is invalid';
+  }
+};
+
+const getCalcQuestion = (operand1, operand2, expr) => {
+  switch (expr) {
+    case 0:
+      return `Question: ${operand1} + ${operand2}`;
+
+    case 1:
+      return `Question: ${operand1} - ${operand2}`;
+
+    case 2:
+      return `Question: ${operand1} * ${operand2}`;
+
+    default:
+      return 'Operation value is invalid';
+  }
+};
+
 const getRandomOperation = () => {
   const rules = 'What is the result of the expression?';
-  let result = 0;
-  let question = '';
-
-  const getCaltulationResult = (operand1, operand2, expr) => {
-    switch (expr) {
-      case 0:
-        result = operand1 + operand2;
-        break;
-
-      case 1:
-        result = operand1 - operand2;
-        break;
-
-      case 2:
-        result = operand1 * operand2;
-        break;
-
-      default:
-      // do nothing
-    }
-    return result;
-  };
-  const getQuestion = (operand1, operand2, expr) => {
-    switch (expr) {
-      case 0:
-        question = `Question: ${operand1} + ${operand2}`;
-        break;
-
-      case 1:
-        question = `Question: ${operand1} - ${operand2}`;
-        break;
-
-      case 2:
-        question = `Question: ${operand1} * ${operand2}`;
-        break;
-
-      default:
-      // do nothing
-    }
-    return question;
-  };
 
   const operand1 = randomNum();
   const operand2 = randomNum();
-  const expr = Math.floor(Math.random() * 3);
+  const expr = randomNum(3);
 
-  getCaltulationResult(operand1, operand2, expr);
-  getQuestion(operand1, operand2, expr);
+  const result = getCaltulationResult(operand1, operand2, expr);
+  const question = getCalcQuestion(operand1, operand2, expr);
   return {
     rules,
     question,
