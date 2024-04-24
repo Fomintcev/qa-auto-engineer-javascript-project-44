@@ -1,4 +1,4 @@
-const isEqual = (gameResult, userAnswer) => {
+const roundResult = (gameResult, userAnswer) => {
   if (gameResult === userAnswer) {
     console.log('Correct!');
   } else {
@@ -8,4 +8,4 @@ Correct answer was "${gameResult}"`);
   }
   return true;
 };
-export default isEqual;
+export default roundResult;

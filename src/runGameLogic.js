@@ -1,6 +1,6 @@
 import getPlayerName from './getPlayerName.js';
 import getAnswer from './getAnswer.js';
-import isEqual from './isEqual.js';
+import roundResult from './roundResult.js';
 
 const gameLogic = (resultFromGame) => {
   const TOTAL_ROUNDS = 3;
@@ -13,7 +13,7 @@ const gameLogic = (resultFromGame) => {
     console.log(question);
     const userAnswer = getAnswer();
 
-    if (isEqual(result, userAnswer) !== true) {
+    if (roundResult(result, userAnswer) !== true) {
       console.log(`Let's try again, ${name}!`);
       return;
     }
